@@ -1,0 +1,265 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="A clean, responsive single-file website template: hero, features, portfolio and contact form." />
+  <title>Complete Website — Single File Template</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='0.9em' font-size='90'%3E%F0%9F%92%BB%3C/text%3E%3C/svg%3E">
+  <style>
+    :root{
+      --bg:#0f1724; --card:#0b1220; --muted:#94a3b8; --accent:#06b6d4; --glass: rgba(255,255,255,0.03);
+      --radius:14px; --max:1100px; font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{margin:0;background:linear-gradient(180deg,#071022 0%, #0b1320 100%);color:#e6eef6;line-height:1.45;-webkit-font-smoothing:antialiased}
+    .container{width:calc(100% - 32px);max-width:var(--max);margin:0 auto;padding:24px}
+
+    /* header */
+    header{display:flex;align-items:center;justify-content:space-between;padding:14px 0}
+    .brand{display:flex;gap:12px;align-items:center}
+    .logo{width:44px;height:44px;border-radius:10px;background:linear-gradient(135deg,var(--accent),#7c3aed);display:flex;align-items:center;justify-content:center;font-weight:700;box-shadow:0 6px 24px rgba(6,182,212,0.08)}
+    nav{display:flex;gap:18px;align-items:center}
+    nav a{color:var(--muted);text-decoration:none;font-weight:600;font-size:15px}
+    nav a:hover{color:#fff}
+    .cta{background:linear-gradient(90deg,var(--accent),#7c3aed);padding:10px 14px;border-radius:10px;color:#041025;text-decoration:none;font-weight:700}
+
+    /* hero */
+    .hero{display:grid;grid-template-columns:1fr 420px;gap:28px;align-items:center;padding:48px 0}
+    .eyebrow{display:inline-block;background:var(--glass);padding:6px 10px;border-radius:999px;color:var(--muted);font-weight:700;margin-bottom:18px}
+    h1{font-size:36px;margin:0 0 12px}
+    p.lead{color:var(--muted);margin:0 0 22px}
+    .actions{display:flex;gap:12px;align-items:center}
+    .btn{padding:12px 16px;border-radius:10px;border:1px solid rgba(255,255,255,0.04);text-decoration:none;font-weight:700;background:transparent;color:#e6eef6}
+    .btn.primary{background:linear-gradient(90deg,var(--accent),#7c3aed);color:#041025;border:none}
+
+    /* card */
+    .card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));border-radius:var(--radius);padding:18px;box-shadow:0 6px 30px rgba(2,6,23,0.6);border:1px solid rgba(255,255,255,0.03)}
+
+    /* features */
+    .features{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin:34px 0}
+    .feature h3{margin:8px 0 6px;font-size:16px}
+    .feature p{color:var(--muted);margin:0}
+
+    /* portfolio */
+    .portfolio{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin:34px 0}
+    .proj{border-radius:12px;overflow:hidden;background:linear-gradient(180deg, rgba(255,255,255,0.015), transparent);min-height:160px;display:flex;flex-direction:column}
+    .proj .meta{padding:12px}
+
+    /* about + contact */
+    .split{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin:34px 0}
+    form input, form textarea{width:100%;padding:12px;border-radius:10px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:inherit;margin-bottom:10px}
+    form label{font-size:13px;color:var(--muted);display:block;margin-bottom:6px}
+    form .submit{display:inline-block}
+
+    footer{padding:30px 0;color:var(--muted);font-size:14px;border-top:1px solid rgba(255,255,255,0.02);margin-top:40px}
+
+    /* responsiveness */
+    @media (max-width:980px){.hero{grid-template-columns:1fr;}.portfolio,.features{grid-template-columns:repeat(2,1fr)}.split{grid-template-columns:1fr}}
+    @media (max-width:600px){.features,.portfolio{grid-template-columns:1fr}nav{display:none}h1{font-size:28px}}
+
+    /* small helpers */
+    .muted{color:var(--muted)}
+    .center{text-align:center}
+    .grid{display:grid}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="brand">
+        <div class="logo" aria-hidden>WS</div>
+        <div>
+          <div style="font-weight:800;letter-spacing:0.2px">Website Studio</div>
+          <div class="muted" style="font-size:13px;margin-top:2px">Single-file template</div>
+        </div>
+      </div>
+      <nav aria-label="Primary navigation">
+        <a href="#features">Features</a>
+        <a href="#portfolio">Portfolio</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <a class="cta" href="#contact">Get in touch</a>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div>
+          <span class="eyebrow">Beautiful • Fast • Accessible</span>
+          <h1>Modern single-file website — ready to use</h1>
+          <p class="lead">This is a complete, accessible, responsive website delivered as a single HTML file. Use it as a template or a starting point for your project.</p>
+          <div class="actions">
+            <a class="btn primary" href="#contact">Start a project</a>
+            <a class="btn" href="#portfolio">See work</a>
+          </div>
+          <div style="margin-top:22px" class="muted">Built with semantic HTML, progressive enhancement, and simple JavaScript for client-side interactions.</div>
+        </div>
+
+        <aside class="card" aria-labelledby="card-title">
+          <h3 id="card-title" style="margin:0 0 8px">Quick facts</h3>
+          <p class="muted" style="margin:0 0 12px">This template includes: responsive layout, accessible markup, form validation, and lightweight animations — all in one file.</p>
+          <ul class="muted" style="padding-left:18px;margin:0">
+            <li>No build tools required</li>
+            <li>Works offline once loaded (static)</li>
+            <li>Easy to adapt and style</li>
+          </ul>
+        </aside>
+      </section>
+
+      <section id="features">
+        <h2 style="margin:0 0 14px">Features</h2>
+        <div class="features">
+          <div class="card feature">
+            <div style="font-size:28px;font-weight:800">⚡</div>
+            <h3>Performance</h3>
+            <p>Small, efficient CSS and JS so pages load quickly and feel snappy on mobile and desktop.</p>
+          </div>
+          <div class="card feature">
+            <div style="font-size:28px;font-weight:800">🔒</div>
+            <h3>Privacy-friendly</h3>
+            <p>No trackers, no analytics. Forms submit to your email or can be wired to any backend.</p>
+          </div>
+          <div class="card feature">
+            <div style="font-size:28px;font-weight:800">♿</div>
+            <h3>Accessible</h3>
+            <p>Semantic markup, good contrast and keyboard navigation for inclusive experiences.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="portfolio">
+        <h2 style="margin:0 0 14px">Portfolio</h2>
+        <div class="portfolio">
+          <article class="proj card">
+            <div style="flex:1;background:linear-gradient(90deg, rgba(255,255,255,0.02), transparent);height:110px;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:18px">Project A</div>
+            <div class="meta">
+              <div style="font-weight:700">Sleek marketing site</div>
+              <div class="muted" style="font-size:13px">Landing, signup, analytics dashboard (example)</div>
+            </div>
+          </article>
+
+          <article class="proj card">
+            <div style="flex:1;background:linear-gradient(90deg, rgba(255,255,255,0.02), transparent);height:110px;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:18px">Project B</div>
+            <div class="meta">
+              <div style="font-weight:700">Portfolio & blog</div>
+              <div class="muted" style="font-size:13px">Personal brand site with blog and projects.</div>
+            </div>
+          </article>
+
+          <article class="proj card">
+            <div style="flex:1;background:linear-gradient(90deg, rgba(255,255,255,0.02), transparent);height:110px;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:18px">Project C</div>
+            <div class="meta">
+              <div style="font-weight:700">Small business site</div>
+              <div class="muted" style="font-size:13px">Service pages, booking, contact and testimonials.</div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section id="about">
+        <h2 style="margin:0 0 14px">About</h2>
+        <div class="card split">
+          <div>
+            <h3>Who we are</h3>
+            <p class="muted">A small design & development studio focused on delivering fast, accessible, and delightful web experiences. This template demonstrates core patterns for building modern static websites without toolchains.</p>
+            <h4 style="margin-top:16px">Tech stack</h4>
+            <p class="muted" style="margin:0">HTML, CSS, minimal JavaScript. Ready to adapt to frameworks (React, Vue, Svelte) or to remain plain static.</p>
+          </div>
+
+          <div>
+            <h3>How to use</h3>
+            <ol class="muted" style="padding-left:18px;margin:0">
+              <li>Download this file and rename to <code>index.html</code>.</li>
+              <li>Edit text, replace images, and point forms to your backend.</li>
+              <li>Host anywhere: GitHub Pages, Netlify, Vercel or a traditional web host.</li>
+            </ol>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact">
+        <h2 style="margin:0 0 14px">Contact</h2>
+        <div class="card">
+          <form id="contactForm" novalidate>
+            <div>
+              <label for="name">Name</label>
+              <input id="name" name="name" type="text" required aria-required="true" placeholder="Your name" />
+            </div>
+            <div>
+              <label for="email">Email</label>
+              <input id="email" name="email" type="email" required aria-required="true" placeholder="you@example.com" />
+            </div>
+            <div>
+              <label for="message">Message</label>
+              <textarea id="message" name="message" rows="5" required placeholder="Tell us about your project"></textarea>
+            </div>
+
+            <div style="display:flex;gap:10px;align-items:center;margin-top:8px">
+              <button type="submit" class="btn primary submit">Send message</button>
+              <div id="formStatus" class="muted" aria-live="polite" style="font-size:14px"></div>
+            </div>
+          </form>
+          <p class="muted" style="margin-top:12px">This form uses client-side validation only. To actually send messages, set the <code>action</code> attribute to your server endpoint or use a service like Formspree, Netlify Forms, or similar.</p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="center">
+      <div>© <span id="year">2025</span> Website Studio — Built with care</div>
+      <div style="margin-top:8px" class="muted">Made with semantic HTML, responsive CSS and unobtrusive JavaScript.</div>
+    </footer>
+  </div>
+
+  <script>
+    // Progressive small JS: smooth scrolling, simple form validation and accessible focus handling
+    (function(){
+      // Update year dynamically
+      document.getElementById('year').textContent = new Date().getFullYear();
+
+      // Smooth scroll for internal links
+      document.querySelectorAll('a[href^="#"]').forEach(function(a){
+        a.addEventListener('click', function(e){
+          var target = document.querySelector(this.getAttribute('href'));
+          if(target){
+            e.preventDefault();
+            target.scrollIntoView({behavior:'smooth',block:'start'});
+            target.setAttribute('tabindex','-1');
+            target.focus({preventScroll:true});
+            window.setTimeout(function(){ target.removeAttribute('tabindex'); },1000);
+          }
+        });
+      });
+
+      // Basic form validation + fake-send behavior (no network)
+      var form = document.getElementById('contactForm');
+      var status = document.getElementById('formStatus');
+      form.addEventListener('submit', function(e){
+        e.preventDefault();
+        status.textContent = '';
+        var name = form.name.value.trim();
+        var email = form.email.value.trim();
+        var message = form.message.value.trim();
+        if(!name || !email || !message){
+          status.textContent = 'Please fill in all fields.';
+          return;
+        }
+        if(!/^\S+@\S+\.\S+$/.test(email)){
+          status.textContent = 'Please enter a valid email address.';
+          return;
+        }
+        // Show a friendly confirmation and reset the form (simulation)
+        status.textContent = 'Thanks — your message looks good. This demo does not send emails.';
+        form.reset();
+      });
+
+      // Reduce motion preference
+      if(window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+        document.documentElement.style.scrollBehavior = 'auto';
+      }
+
+    })();
+  </script>
+</body>
+</html>
